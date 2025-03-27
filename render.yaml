@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: todolist-backend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://yourUser:yourPass@cluster.mongodb.net/todolist
+      - key: PORT
+        value: 3000
